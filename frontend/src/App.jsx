@@ -7,6 +7,9 @@ import AdminLayout from './layouts/AdminLayout'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 
+// Landing
+import Landing from './pages/Landing'
+
 // User Pages
 import UserDashboard from './pages/user/Dashboard'
 import Rekomendasi from './pages/user/Rekomendasi'
@@ -31,12 +34,12 @@ function App() {
   return (
     <Routes>
       {/* Public Routes */}
+      <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
       {/* User Routes */}
-      <Route path="/" element={<ProtectedRoute role="user"><UserLayout /></ProtectedRoute>}>
-        <Route index element={<Navigate to="/dashboard" replace />} />
+      <Route element={<ProtectedRoute role="user"><UserLayout /></ProtectedRoute>}>
         <Route path="dashboard" element={<UserDashboard />} />
         <Route path="rekomendasi" element={<Rekomendasi />} />
         <Route path="kalender" element={<Kalender />} />
