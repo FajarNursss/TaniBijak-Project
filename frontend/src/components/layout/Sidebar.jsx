@@ -1,10 +1,9 @@
-import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import {
   LayoutDashboard, Sprout, CalendarDays, CloudSun,
   BellRing, MapPin, BookHeart, History, UserRound,
-  LogOut, Wheat, X
+  LogOut, X
 } from 'lucide-react'
 
 const userMenu = [

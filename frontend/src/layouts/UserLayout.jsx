@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Sidebar from '../components/layout/Sidebar'
 import Navbar from '../components/layout/Navbar'
+import ChatbotToggle from '../components/common/ChatbotToggle'
 
 const pageTitles = {
   '/dashboard': 'Dashboard',
@@ -29,6 +30,7 @@ const UserLayout = () => {
           <Outlet />
         </main>
       </div>
+      <ChatbotToggle />
     </div>
   )
 }
