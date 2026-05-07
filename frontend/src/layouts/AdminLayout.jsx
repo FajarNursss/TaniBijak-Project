@@ -6,7 +6,7 @@ import { useNotification } from '../context/NotificationContext'
 import { Menu, Bell } from 'lucide-react'
 
 const adminPageTitles = {
-  '/admin/dashboard':  'Dashboard Admin',
+  '/admin/dashboard':  'Beranda',
   '/admin/users':      'Manajemen User',
   '/admin/lahan':      'Manajemen Lahan',
   '/admin/kearifan':   'Manajemen Kearifan Lokal',

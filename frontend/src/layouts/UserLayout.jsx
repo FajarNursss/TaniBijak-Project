@@ -5,7 +5,7 @@ import Navbar from '../components/layout/Navbar'
 import ChatbotToggle from '../components/common/ChatbotToggle'
 
 const pageTitles = {
-  '/dashboard': 'Dashboard',
+  '/dashboard': 'Beranda',
   '/rekomendasi': 'Rekomendasi Tanam',
   '/kalender': 'Kalender Tanam',
   '/cuaca': 'Cuaca & Iklim',

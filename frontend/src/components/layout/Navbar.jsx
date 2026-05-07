@@ -6,9 +6,9 @@ import { Menu, Bell, Info, AlertTriangle, AlertCircle, ChevronRight } from 'luci
 
 const notifIcon = { info: Info, warning: AlertTriangle, danger: AlertCircle }
 const notifColor = { info: 'text-blue-500', warning: 'text-yellow-500', danger: 'text-red-500' }
-const notifBg   = { info: 'bg-blue-50/70', warning: 'bg-yellow-50/70', danger: 'bg-red-50/70' }
+const notifBg = { info: 'bg-blue-50/70', warning: 'bg-yellow-50/70', danger: 'bg-red-50/70' }
 
-const Navbar = ({ onMenuToggle, title = 'Dashboard' }) => {
+const Navbar = ({ onMenuToggle, title = 'Beranda' }) => {
   const { user } = useAuth()
   const { notifications, unreadCount, markAsRead, markAllRead } = useNotification()
   const [showNotif, setShowNotif] = useState(false)
@@ -29,7 +29,7 @@ const Navbar = ({ onMenuToggle, title = 'Dashboard' }) => {
         <div>
           <h2 className="font-bold text-gray-800 text-lg leading-tight">{title}</h2>
           <p className="text-xs text-gray-400 hidden sm:block">
-            {new Date().toLocaleDateString('id-ID', { weekday:'long', year:'numeric', month:'long', day:'numeric' })}
+            {new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>
       </div>

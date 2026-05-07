@@ -12,8 +12,8 @@ import {
 } from 'lucide-react'
 
 const statusStyle = { selesai: 'success', terjadwal: 'info', gagal: 'danger' }
-const notifIcon  = { info: Info, warning: AlertTriangle, danger: AlertCircle }
-const notifBg    = { info: 'bg-blue-50 text-blue-500', warning: 'bg-yellow-50 text-yellow-500', danger: 'bg-red-50 text-red-500' }
+const notifIcon = { info: Info, warning: AlertTriangle, danger: AlertCircle }
+const notifBg = { info: 'bg-blue-50 text-blue-500', warning: 'bg-yellow-50 text-yellow-500', danger: 'bg-red-50 text-red-500' }
 
 const UserDashboard = () => {
   const { user } = useAuth()
@@ -61,7 +61,7 @@ const UserDashboard = () => {
       {/* Incomplete Profile Warning */}
       {isLocationIncomplete && (
         <div className="bg-amber-50 border border-amber-200 text-amber-800 px-5 py-4 rounded-2xl text-sm flex items-start gap-3 shadow-sm">
-          <AlertTriangle size={20} className="text-amber-500 shrink-0 mt-0.5" /> 
+          <AlertTriangle size={20} className="text-amber-500 shrink-0 mt-0.5" />
           <div>
             <strong className="block mb-1 text-base">Lengkapi Profil Lokasi Anda</strong>
             <p className="text-amber-700/80 mb-2">Data Provinsi dan Kota/Kabupaten belum lengkap. Sistem membutuhkan data ini untuk memberikan prediksi cuaca dan rekomendasi yang lebih akurat.</p>
@@ -74,10 +74,10 @@ const UserDashboard = () => {
 
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard icon={MapPin}      label="Total Lahan"    value={totalLahan} trend="10%" trendUp color="primary" />
-        <StatCard icon={Sprout}      label="Tanaman Aktif"  value={dashboard?.tanaman_aktif || 0}         trend="1"   trendUp color="info" />
-        <StatCard icon={BellRing}    label="Peringatan"     value={unreadCount}            color="warning" />
-        <StatCard icon={ClipboardList} label="Riwayat Tanam" value={totalHistory}      trend="3"   trendUp color="accent" />
+        <StatCard icon={MapPin} label="Total Lahan" value={totalLahan} trend="10%" trendUp color="primary" />
+        <StatCard icon={Sprout} label="Tanaman Aktif" value={dashboard?.tanaman_aktif || 0} trend="1" trendUp color="info" />
+        <StatCard icon={BellRing} label="Peringatan" value={unreadCount} color="warning" />
+        <StatCard icon={ClipboardList} label="Riwayat Tanam" value={totalHistory} trend="3" trendUp color="accent" />
       </div>
 
       {/* Main Grid */}
@@ -128,9 +128,9 @@ const UserDashboard = () => {
             <p className="text-gray-500 mt-1 text-sm">{weatherData.condition}</p>
           </div>
           {[
-            { label: 'Kelembaban',       value: `${weatherData.humidity}%`,   Icon: Droplets,  color: 'text-blue-400' },
-            { label: 'Kecepatan Angin',  value: `${weatherData.windSpeed} km/h`, Icon: Wind,   color: 'text-gray-400' },
-            { label: 'Risiko Hujan',     value: weatherData.rain,             Icon: CloudRain, color: 'text-blue-500' },
+            { label: 'Kelembaban', value: `${weatherData.humidity}%`, Icon: Droplets, color: 'text-blue-400' },
+            { label: 'Kecepatan Angin', value: `${weatherData.windSpeed} km/h`, Icon: Wind, color: 'text-gray-400' },
+            { label: 'Risiko Hujan', value: weatherData.rain, Icon: CloudRain, color: 'text-blue-500' },
           ].map(({ label, value, Icon, color }, i) => (
             <div key={i} className="flex items-center justify-between py-2.5 border-b border-gray-50 last:border-0">
               <span className="text-sm text-gray-500 flex items-center gap-2">
@@ -143,52 +143,45 @@ const UserDashboard = () => {
       </div>
 
       {/* Activities & Notifications */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-800 flex items-center gap-2">
-              <ClipboardList size={18} strokeWidth={1.8} className="text-gray-500" /> Aktivitas Terkini
-            </h3>
-            <Link to="/riwayat" className="text-sm text-primary-700 font-semibold hover:underline">Semua</Link>
-          </div>
-          <div className="space-y-3">
-            {activities.map(a => (
-              <div key={a.id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="w-2 h-2 rounded-full bg-primary-500 flex-shrink-0 mt-1" />
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm text-gray-800 truncate">{a.action}</p>
-                  <p className="text-xs text-gray-400">{a.lahan} · {a.date}</p>
-                </div>
-                <Badge type={statusStyle[a.status]}>{a.status}</Badge>
-              </div>
-            ))}
-            {activities.length === 0 && <p className="text-sm text-gray-400">Tidak ada aktivitas terbaru.</p>}
-          </div>
-        </div>
+      <div className="grid grid-cols-1 gap-6">
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-800 flex items-center gap-2">
-              <BellRing size={18} strokeWidth={1.8} className="text-gray-500" /> Notifikasi Terbaru
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2">
+              <BellRing size={20} strokeWidth={1.8} className="text-gray-500" /> Notifikasi Terbaru
             </h3>
-            <Link to="/peringatan" className="text-sm text-primary-700 font-semibold hover:underline">Semua</Link>
+            <Link to="/peringatan" className="text-sm text-primary-700 font-semibold hover:underline flex items-center gap-1">
+              Lihat Semua <ArrowRight size={14} />
+            </Link>
           </div>
-          <div className="space-y-3">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {notifications.slice(0, 4).map(n => {
               const Icon = notifIcon[n.type] || Info
-              const cls  = notifBg[n.type] || 'bg-gray-50 text-gray-500'
+              const cls = notifBg[n.type] || 'bg-gray-50 text-gray-500'
               return (
-                <div key={n.id} className={`flex gap-3 p-3 rounded-xl ${!n.read ? cls.split(' ')[0] : 'bg-gray-50'}`}>
-                  <Icon size={18} strokeWidth={1.8} className={`mt-0.5 flex-shrink-0 ${cls.split(' ')[1]}`} />
+                <div
+                  key={n.id}
+                  className={`flex gap-4 p-4 rounded-2xl transition-all ${!n.read ? cls.split(' ')[0] : 'bg-gray-50'}`}
+                >
+                  <Icon size={20} strokeWidth={1.8} className={`mt-0.5 flex-shrink-0 ${cls.split(' ')[1]}`} />
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-sm text-gray-800 truncate">{n.title}</p>
-                    <p className="text-xs text-gray-500 line-clamp-1">{n.message}</p>
+                    <div className="flex justify-between items-start">
+                      <p className="font-bold text-sm text-gray-800 truncate">{n.title}</p>
+                      {!n.read && <div className="w-2 h-2 bg-primary-600 rounded-full flex-shrink-0 mt-1" />}
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed">{n.message}</p>
                   </div>
-                  {!n.read && <div className="w-1.5 h-1.5 bg-primary-600 rounded-full flex-shrink-0 mt-1" />}
                 </div>
               )
             })}
           </div>
+
+          {notifications.length === 0 && (
+            <div className="text-center py-10">
+              <p className="text-sm text-gray-400 font-medium">Tidak ada notifikasi terbaru.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
