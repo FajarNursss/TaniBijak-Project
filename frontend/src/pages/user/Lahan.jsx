@@ -85,7 +85,7 @@ const Lahan = () => {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><MapPin size={20} strokeWidth={1.8} className="text-primary-600" /> Lahan Saya</h2>
-          <p className="text-sm text-gray-500">Data diambil dari backend Laravel/MySQL</p>
+          <p className="text-sm text-gray-500">Kelola informasi lahan Anda</p>
         </div>
         <button onClick={() => { setForm(emptyForm); setShowAdd(true) }} className="btn-primary flex items-center gap-2"><Plus size={16} /> Tambah Lahan</button>
       </div>
@@ -131,7 +131,7 @@ const Lahan = () => {
                     { label:'Luas',    value:`${l.luas} Ha`,             Icon:Ruler },
                     { label:'Jenis',   value:l.jenis_tanah || '-',       Icon:MapPin },
                     { label:'Tanaman', value:l.tanaman || '-',           Icon:Sprout },
-                    { label:'Sumber',  value:'MySQL API',                Icon:RefreshCcw },
+                    { label:'Status',  value:'Tersimpan',                Icon:RefreshCcw },
                   ].map(({ label, value, Icon }, i) => (
                     <div key={i} className="bg-gray-50 rounded-xl p-2.5">
                       <p className="text-xs text-gray-400 flex items-center gap-1 mb-0.5"><Icon size={11} /> {label}</p>
@@ -143,14 +143,14 @@ const Lahan = () => {
                 <div className="flex items-center justify-between border-t border-gray-100 pt-3">
                   <div className="flex gap-3 text-xs text-gray-500">
                     <span className="flex items-center gap-1"><FlaskConical size={12} className="text-gray-400" /> ID: <b className="text-gray-700">{l.id}</b></span>
-                    <span className="flex items-center gap-1"><Leaf size={12} className="text-gray-400" /> DB</span>
+                    <span className="flex items-center gap-1"><Leaf size={12} className="text-gray-400" /> Tersimpan</span>
                   </div>
                   <div className="flex gap-1">
                     <button onClick={() => setSelected(l)} className="p-1.5 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors" title="Detail"><Eye size={15} strokeWidth={1.8} /></button>
                     <button onClick={() => setShowDelete(l)} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Hapus"><Trash2 size={15} strokeWidth={1.8} /></button>
                   </div>
                 </div>
-                <p className="text-xs text-gray-400 mt-2 flex items-center gap-1"><Clock size={11} /> Data backend</p>
+                <p className="text-xs text-gray-400 mt-2 flex items-center gap-1"><Clock size={11} /> Diperbarui baru saja</p>
               </div>
             )
           })}
@@ -167,7 +167,7 @@ const Lahan = () => {
                 { label:'Jenis',      val:selected.jenis_tanah || '-',   Icon:MapPin },
                 { label:'Tanaman',    val:selected.tanaman || '-',       Icon:Sprout },
                 { label:'Kondisi',    val:selected.kondisi,              Icon:RefreshCcw },
-                { label:'ID MySQL',   val:selected.id,                   Icon:FlaskConical },
+                { label:'ID Lahan',   val:selected.id,                   Icon:FlaskConical },
                 { label:'Pemilik ID', val:selected.user_id,              Icon:Leaf },
               ].map(({ label, val, Icon }, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-3">
@@ -201,7 +201,7 @@ const Lahan = () => {
 
       <Modal isOpen={!!showDelete} onClose={() => setShowDelete(null)} title="Hapus Lahan"
         footer={<><button onClick={() => setShowDelete(null)} className="btn-outline">Batal</button><button disabled={saving} onClick={handleDelete} className="btn-danger flex items-center gap-2"><Trash2 size={15}/> Ya, Hapus</button></>}>
-        <p className="text-gray-600">Hapus lahan <strong>{showDelete?.nama}</strong> dari MySQL?</p>
+        <p className="text-gray-600">Hapus lahan <strong>{showDelete?.nama}</strong>?</p>
       </Modal>
     </div>
   )

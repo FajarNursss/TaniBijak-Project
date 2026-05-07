@@ -44,7 +44,7 @@ const KearifanLokal = () => {
             <h2 className="text-xl font-bold flex items-center gap-2">
               <BookHeart size={22} strokeWidth={2} /> Kearifan Lokal Pertanian
             </h2>
-            <p className="text-yellow-100 text-sm mt-1">Data diambil dari tabel `local_wisdoms`</p>
+            <p className="text-yellow-100 text-sm mt-1">Eksplorasi warisan budaya dan teknik pertanian tradisional</p>
           </div>
           <div className="bg-white/20 rounded-xl px-4 py-2 text-center">
             <p className="text-2xl font-bold">{items.length}</p>

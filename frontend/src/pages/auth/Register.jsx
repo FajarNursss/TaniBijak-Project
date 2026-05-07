@@ -141,8 +141,8 @@ const Register = () => {
           </form>
 
           <div className="mt-6 w-full text-center">
-            <Link to="/login" className="text-sm text-gray-500 hover:text-primary-700 font-medium transition-colors">
-              Sudah punya akun? Login
+            <Link to="/login" className="text-sm text-gray-500 font-medium">
+              Sudah punya akun? <span className="text-blue-600 hover:text-blue-700 transition-colors font-bold">Masuk</span>
             </Link>
           </div>
 

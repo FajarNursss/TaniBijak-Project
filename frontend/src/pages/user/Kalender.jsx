@@ -57,7 +57,7 @@ const Kalender = () => {
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
             <CalendarDays size={20} strokeWidth={1.8} className="text-primary-600" /> Kalender Tanam
           </h2>
-          <p className="text-sm text-gray-500">Jadwal diambil dari tabel `calendar_events`</p>
+          <p className="text-sm text-gray-500">Kelola jadwal tanam dan panen Anda</p>
         </div>
         <button className="btn-primary flex items-center gap-2"><Plus size={16} /> Tambah Jadwal</button>
       </div>

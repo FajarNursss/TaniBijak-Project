@@ -72,8 +72,8 @@ const Landing = () => {
 
         {/* Desktop Auth Buttons */}
         <div className="hidden md:flex gap-6 items-center">
-          <Link to="/login" className="text-gray-600 hover:text-primary-700 font-semibold transition-colors text-base">Sign In</Link>
-          <Link to="/register" className="bg-primary-700 hover:bg-primary-800 text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:shadow-primary-700/40 transition-all text-base">Sign Up</Link>
+          <Link to="/login" className="text-gray-600 hover:text-primary-700 font-semibold transition-colors text-base">Masuk</Link>
+          <Link to="/register" className="bg-primary-700 hover:bg-primary-800 text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:shadow-primary-700/40 transition-all text-base">Daftar</Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -93,8 +93,8 @@ const Landing = () => {
           <a href="#kontak" onClick={() => { setIsMobileMenuOpen(false); setActiveSection('kontak'); }} className={`text-lg transition-colors border-b border-gray-100 pb-4 ${activeSection === 'kontak' ? 'text-primary-700 font-bold' : 'text-gray-800 font-semibold hover:text-primary-700'}`}>Kontak</a>
         </div>
         <div className="mt-8 flex flex-col gap-4">
-          <Link to="/login" className="w-full text-center border-2 border-primary-700 text-primary-700 py-3 rounded-full font-bold text-lg hover:bg-primary-50 transition-colors">Sign In</Link>
-          <Link to="/register" className="w-full text-center bg-primary-700 hover:bg-primary-800 text-white py-3 rounded-full font-bold shadow-lg transition-colors text-lg">Sign Up</Link>
+          <Link to="/login" className="w-full text-center border-2 border-primary-700 text-primary-700 py-3 rounded-full font-bold text-lg hover:bg-primary-50 transition-colors">Masuk</Link>
+          <Link to="/register" className="w-full text-center bg-primary-700 hover:bg-primary-800 text-white py-3 rounded-full font-bold shadow-lg transition-colors text-lg">Daftar</Link>
         </div>
       </div>
 

@@ -42,7 +42,7 @@ const FloatingInput = ({ label, icon: Icon, name, type = "text", value, onChange
     </div>
   )
 }
-
+ 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' })
   const [error, setError] = useState('')
@@ -149,8 +149,8 @@ const Login = () => {
 
           {/* Additional Links/Info */}
           <div className="w-full mt-8 text-center">
-            <Link to="/register" className="text-sm text-gray-500 hover:text-primary-700 font-medium transition-colors">
-              Belum punya akun? Register
+            <Link to="/register" className="text-sm text-gray-500 font-medium">
+              Belum punya akun? <span className="text-blue-600 hover:text-blue-700 transition-colors font-bold">Daftar</span>
             </Link>
           </div>
 

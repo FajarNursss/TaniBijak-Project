@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 
 const adminMenu = [
-  { path: '/admin/dashboard',  icon: BarChart3,  label: 'Dashboard' },
+  { path: '/admin/dashboard',  icon: BarChart3,  label: 'Beranda' },
   { path: '/admin/users',      icon: Users,      label: 'Manajemen User' },
   { path: '/admin/lahan',      icon: Map,        label: 'Manajemen Lahan' },
   { path: '/admin/kearifan',   icon: BookOpen,   label: 'Kearifan Lokal' },

@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 
 const userMenu = [
-  { path: '/dashboard',     icon: LayoutDashboard, label: 'Dashboard' },
+  { path: '/dashboard',     icon: LayoutDashboard, label: 'Beranda' },
   { path: '/rekomendasi',   icon: Sprout,           label: 'Rekomendasi Tanam' },
   { path: '/kalender',      icon: CalendarDays,     label: 'Kalender Tanam' },
   { path: '/cuaca',         icon: CloudSun,         label: 'Cuaca & Iklim' },

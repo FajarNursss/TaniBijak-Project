@@ -39,7 +39,7 @@ const Rekomendasi = () => {
         <h2 className="text-xl font-bold flex items-center gap-2">
           <Sprout size={22} strokeWidth={2} /> Rekomendasi Tanam Cerdas
         </h2>
-        <p className="text-primary-200 text-sm mt-1">Berdasarkan data rekomendasi yang disimpan di MySQL</p>
+        <p className="text-primary-200 text-sm mt-1">Dapatkan rekomendasi terbaik berdasarkan cuaca di lokasi Anda</p>
       </div>
 
       <div className="flex gap-3 flex-wrap items-center">
@@ -52,7 +52,7 @@ const Rekomendasi = () => {
           <Filter size={14} className="text-gray-500" />
           {kats.map(k => (
             <button key={k} onClick={() => setFilterKat(k)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${filterKat===k ? 'bg-primary-800 text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${filterKat === k ? 'bg-primary-800 text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
               {k}
             </button>
           ))}
@@ -82,15 +82,15 @@ const Rekomendasi = () => {
               </div>
 
               <div className="bg-gray-100 rounded-full h-2.5 mb-3 overflow-hidden">
-                <div className={`h-2.5 rounded-full ${warna.bar} transition-all`} style={{ width:`${r.skor}%` }} />
+                <div className={`h-2.5 rounded-full ${warna.bar} transition-all`} style={{ width: `${r.skor}%` }} />
               </div>
 
               <p className="text-sm text-gray-600 line-clamp-2 mb-3">{r.alasan}</p>
 
               <div className="flex items-center justify-between text-xs text-gray-400">
                 <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1"><Thermometer size={12}/> {r.suhu}</span>
-                  <span className="flex items-center gap-1"><Droplets size={12}/> {r.curah_hujan}</span>
+                  <span className="flex items-center gap-1"><Thermometer size={12} /> {r.suhu}</span>
+                  <span className="flex items-center gap-1"><Droplets size={12} /> {r.curah_hujan}</span>
                 </div>
                 <span className="flex items-center gap-1 text-primary-700 font-semibold">
                   Detail <ChevronRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
@@ -115,19 +115,19 @@ const Rekomendasi = () => {
                     <span className={`text-2xl font-bold ${warna.text}`}>{selected.skor}/100</span>
                   </div>
                   <div className="bg-white/60 rounded-full h-2 overflow-hidden">
-                    <div className={`h-2 rounded-full ${warna.bar}`} style={{ width:`${selected.skor}%` }} />
+                    <div className={`h-2 rounded-full ${warna.bar}`} style={{ width: `${selected.skor}%` }} />
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  { label:'Musim',         val:selected.musim,        Icon:CloudSun },
-                  { label:'Suhu Optimal',  val:selected.suhu,         Icon:Thermometer },
-                  { label:'Curah Hujan',   val:selected.curah_hujan,  Icon:Droplets },
-                  { label:'Jenis Tanah',   val:selected.jenis_tanah,  Icon:Leaf },
-                  { label:'pH Tanah',      val:selected.ph,           Icon:Sprout },
-                  { label:'Kategori',      val:selected.kategori,     Icon:Star },
+                  { label: 'Musim', val: selected.musim, Icon: CloudSun },
+                  { label: 'Suhu Optimal', val: selected.suhu, Icon: Thermometer },
+                  { label: 'Curah Hujan', val: selected.curah_hujan, Icon: Droplets },
+                  { label: 'Jenis Tanah', val: selected.jenis_tanah, Icon: Leaf },
+                  { label: 'pH Tanah', val: selected.ph, Icon: Sprout },
+                  { label: 'Kategori', val: selected.kategori, Icon: Star },
                 ].map(({ label, val, Icon }, i) => (
                   <div key={i} className="bg-gray-50 rounded-xl p-3">
                     <p className="text-xs text-gray-400 flex items-center gap-1 mb-1">
