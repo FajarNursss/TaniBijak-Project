@@ -1,0 +1,42 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Dependency folders
+node_modules/
+vendor/
+.venv/
+venv/
+
+# Build output
+dist/
+build/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Laravel local files
+backend/storage/logs/*.log
+backend/storage/*.key
+backend/.phpunit.result.cache
+
+# Frontend local output
+frontend/dist/
+frontend/*.log
+
+# Machine learning local files
+machine_learning/.venv/
+machine_learning/ml-service/.env
+machine_learning/ml-service/**/__pycache__/

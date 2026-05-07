@@ -8,25 +8,24 @@ use App\Models\CalendarEvent;
 use App\Models\CropHistory;
 use App\Models\FarmNotification;
 use App\Models\LocalWisdom;
-use App\Models\Recommendation;
 use App\Models\WeatherSnapshot;
 use App\Models\Lahan;
 use App\Models\User;
+use App\Services\MlRecommendationService;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function __construct(private readonly MlRecommendationService $mlRecommendation)
+    {
+    }
+
     public function user(Request $request)
     {
         $user = $request->user();
         $lahan = $user->lahans();
         $snapshot = WeatherSnapshot::latest('observed_at')->first();
-        $recommendations = Recommendation::query()
-            ->where(fn ($q) => $q->whereNull('user_id')->orWhere('user_id', $user->id))
-            ->orderByDesc('featured')
-            ->orderByDesc('skor')
-            ->limit(3)
-            ->get();
+        $recommendations = $this->userRecommendations($user);
         $activities = ActivityLog::query()
             ->where(fn ($q) => $q->whereNull('user_id')->orWhere('user_id', $user->id))
             ->latest()
@@ -54,12 +53,7 @@ class DashboardController extends Controller
                     'condition' => $snapshot->condition,
                     'rain' => $snapshot->rain_chance . '%',
                 ] : null,
-                'recommendations' => $recommendations->map(fn ($r) => [
-                    'id' => $r->id,
-                    'tanaman' => $r->tanaman,
-                    'skor' => (int) $r->skor,
-                    'alasan' => $r->alasan,
-                ]),
+                'recommendations' => $recommendations,
                 'activities' => $activities->map(fn ($a) => [
                     'id' => $a->id,
                     'action' => $a->action,
@@ -78,6 +72,29 @@ class DashboardController extends Controller
                 'unread_count' => $notifications->where('read', false)->count(),
             ],
         ]);
+    }
+
+    private function userRecommendations(User $user): array
+    {
+        try {
+            $recommendation = $this->mlRecommendation->generateFromUserLocation($user, true);
+
+            return collect($this->mlRecommendation->recommendationItems($recommendation))
+                ->map(fn (array $item) => [
+                    'id' => $item['id'],
+                    'tanaman' => $item['tanaman'],
+                    'skor' => (int) $item['skor'],
+                    'rank' => $item['rank'] ?? null,
+                    'alasan' => $item['alasan'] ?? null,
+                    'lahan' => $item['lahan'] ?? null,
+                    'weather' => $item['weather'] ?? null,
+                    'source' => $item['source'] ?? null,
+                ])
+                ->values()
+                ->all();
+        } catch (\Throwable) {
+            return [];
+        }
     }
 
     public function admin()

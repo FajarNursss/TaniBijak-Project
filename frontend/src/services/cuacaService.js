@@ -1,12 +1,12 @@
 import api from './api'
 
 const cuacaService = {
-  getCurrentWeather: async (location) => {
-    const response = await api.get('/cuaca/current', { params: { location } })
+  getCurrentWeather: async () => {
+    const response = await api.get('/cuaca/current')
     return response.data
   },
-  getForecast: async (location, days = 7) => {
-    const response = await api.get('/cuaca/forecast', { params: { location, days } })
+  getForecast: async (days = 7) => {
+    const response = await api.get('/cuaca/forecast', { params: { days } })
     return response.data
   },
   getKlimData: async (params = {}) => {

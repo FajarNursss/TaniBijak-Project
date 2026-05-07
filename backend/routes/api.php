@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\AdminUserController;
 use App\Http\Controllers\Api\ActivityController;
 use App\Http\Controllers\Api\CalendarEventController;
+use App\Http\Controllers\Api\ChatbotController;
+use App\Http\Controllers\Api\ChatbotFaqController;
 use App\Http\Controllers\Api\CropHistoryController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CuacaController;
@@ -49,7 +51,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user/rekomendasi', [RecommendationController::class, 'index']);
     Route::get('/user/rekomendasi/featured', [RecommendationController::class, 'featured']);
     Route::get('/user/riwayat-tanam', [CropHistoryController::class, 'index']);
+    Route::post('/user/riwayat-tanam', [CropHistoryController::class, 'store']);
+    Route::put('/user/riwayat-tanam/{cropHistory}', [CropHistoryController::class, 'update']);
+    Route::delete('/user/riwayat-tanam/{cropHistory}', [CropHistoryController::class, 'destroy']);
     Route::get('/user/kalender', [CalendarEventController::class, 'index']);
+    Route::post('/user/kalender', [CalendarEventController::class, 'store']);
     Route::get('/user/kearifan', [LocalWisdomController::class, 'index']);
     Route::get('/notifications', [NotificationController::class, 'index']);
     Route::post('/notifications', [NotificationController::class, 'store']);
@@ -58,6 +64,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy']);
     Route::get('/activities', [ActivityController::class, 'index']);
 
+    Route::prefix('chatbot')->group(function () {
+        Route::get('/sessions', [ChatbotController::class, 'index']);
+        Route::get('/sessions/{chatSession}', [ChatbotController::class, 'show']);
+        Route::post('/message', [ChatbotController::class, 'message']);
+    });
+
     Route::get('/admin/dashboard', [DashboardController::class, 'admin']);
     Route::apiResource('/admin/users', AdminUserController::class);
     Route::get('/admin/lahan', [LahanController::class, 'adminIndex']);
@@ -65,6 +77,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/admin/kearifan', [LocalWisdomController::class, 'store']);
     Route::put('/admin/kearifan/{localWisdom}', [LocalWisdomController::class, 'update']);
     Route::delete('/admin/kearifan/{localWisdom}', [LocalWisdomController::class, 'destroy']);
+    Route::apiResource('/admin/chatbot-faqs', ChatbotFaqController::class)->except(['show']);
 });
 
 Route::prefix('cuaca')->middleware('auth:sanctum')->group(function () {

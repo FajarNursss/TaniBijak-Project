@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Badge from '../../components/ui/Badge'
 import Modal from '../../components/ui/Modal'
 import recommendationService from '../../services/recommendationService'
 import { Sprout, Leaf, Droplets, Thermometer, CloudSun, Star, ChevronRight, Filter, Search } from 'lucide-react'
@@ -8,20 +7,31 @@ const skorWarna = (skor) => {
   if (skor >= 90) return { bar: 'bg-primary-500', text: 'text-primary-700', bg: 'bg-primary-50' }
   if (skor >= 80) return { bar: 'bg-blue-500', text: 'text-blue-700', bg: 'bg-blue-50' }
   if (skor >= 70) return { bar: 'bg-yellow-500', text: 'text-yellow-700', bg: 'bg-yellow-50' }
-  return { bar: 'bg-red-500', text: 'text-red-700', bg: 'bg-red-50' }
+  return { bar: 'bg-primary-500', text: 'text-dark-700', bg: 'bg-red-50' }
 }
 
 const Rekomendasi = () => {
   const [selected, setSelected] = useState(null)
   const [filterKat, setFilterKat] = useState('Semua')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
   const [search, setSearch] = useState('')
   const [items, setItems] = useState([])
 
   useEffect(() => {
     let active = true
     const load = async () => {
-      const res = await recommendationService.getAll()
-      if (active) setItems(res.data || [])
+      setLoading(true)
+      setError('')
+      try {
+        const res = await recommendationService.getAll({ refresh: true })
+        if (active) setItems(res.data || [])
+      } catch (err) {
+        if (active) setError(err.message || 'Gagal memuat rekomendasi tanam.')
+      } finally {
+        if (active) setLoading(false)
+      }
     }
     load()
     return () => { active = false }
@@ -30,7 +40,7 @@ const Rekomendasi = () => {
   const kats = ['Semua', ...new Set(items.map(r => r.kategori).filter(Boolean))]
   const filtered = items.filter(r =>
     (filterKat === 'Semua' || r.kategori === filterKat) &&
-    r.tanaman.toLowerCase().includes(search.toLowerCase())
+    String(r.tanaman || '').toLowerCase().includes(search.toLowerCase())
   )
 
   return (
@@ -59,6 +69,18 @@ const Rekomendasi = () => {
         </div>
       </div>
 
+      {error && <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">{error}</div>}
+
+      {loading ? (
+        <div className="flex items-center justify-center py-16">
+          <div className="w-10 h-10 border-4 border-primary-300 border-t-primary-800 rounded-full animate-spin" />
+        </div>
+      ) : filtered.length === 0 ? (
+        <div className="card text-center py-12">
+          <p className="text-sm font-medium text-gray-500">Rekomendasi tanam belum tersedia.</p>
+          <p className="text-xs text-gray-400 mt-1">Coba ubah pencarian atau filter kategori.</p>
+        </div>
+      ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {filtered.map(r => {
           const warna = skorWarna(r.skor)
@@ -76,8 +98,8 @@ const Rekomendasi = () => {
                   </div>
                 </div>
                 <div className={`text-right ${warna.text}`}>
-                  <p className="text-2xl font-bold">{r.skor}</p>
-                  <p className="text-xs">/ 100</p>
+                  <p className="text-2xl font-bold">{r.skor}%</p>
+                  <p className="text-xs">Skor</p>
                 </div>
               </div>
 
@@ -100,6 +122,7 @@ const Rekomendasi = () => {
           )
         })}
       </div>
+      )}
 
       <Modal isOpen={!!selected} onClose={() => setSelected(null)} size="lg"
         title={selected?.tanaman || ''}
@@ -112,7 +135,7 @@ const Rekomendasi = () => {
                 <div className={`flex-1 rounded-xl p-3 ${warna.bg}`}>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-semibold text-gray-600">Skor Kesesuaian</span>
-                    <span className={`text-2xl font-bold ${warna.text}`}>{selected.skor}/100</span>
+                    <span className={`text-2xl font-bold ${warna.text}`}>{selected.skor}%</span>
                   </div>
                   <div className="bg-white/60 rounded-full h-2 overflow-hidden">
                     <div className={`h-2 rounded-full ${warna.bar}`} style={{ width: `${selected.skor}%` }} />

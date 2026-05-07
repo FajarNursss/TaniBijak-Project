@@ -1,0 +1,10 @@
+pandas
+scikit-learn
+joblib
+requests
+openai
+fastapi
+uvicorn
+flask
+flask-cors
+python-dotenv

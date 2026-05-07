@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'ml' => [
+        'url' => env('ML_SERVICE_URL', 'http://127.0.0.1:5000'),
+        'timeout' => (int) env('ML_SERVICE_TIMEOUT', 30),
+        'cache_hours' => (int) env('ML_RECOMMENDATION_CACHE_HOURS', 6),
+    ],
+
 ];

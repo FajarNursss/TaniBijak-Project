@@ -1,0 +1,301 @@
+temperature,humidity,ph,rainfall,crop
+30,75,6.5,220,Padi
+28,80,6.2,250,Padi
+32,78,6.8,200,Padi
+27,85,6.1,300,Padi
+
+33,60,7.0,120,Jagung
+35,55,7.2,140,Jagung
+32,65,6.8,100,Jagung
+34,58,7.1,130,Jagung
+
+24,88,5.5,350,Teh
+25,85,5.6,340,Teh
+23,90,5.4,370,Teh
+26,83,5.7,330,Teh
+
+29,70,6.0,150,Cabai
+30,68,6.2,140,Cabai
+28,72,5.9,160,Cabai
+31,65,6.3,130,Cabai
+
+18,80,5.8,300,Kentang
+20,78,5.7,280,Kentang
+19,82,5.9,320,Kentang
+17,85,5.6,350,Kentang
+
+27,65,6.5,180,Kedelai
+28,63,6.6,170,Kedelai
+26,68,6.4,190,Kedelai
+29,60,6.7,160,Kedelai
+
+25,85,5.5,400,Kopi
+24,88,5.4,420,Kopi
+26,82,5.6,390,Kopi
+23,90,5.3,450,Kopi
+
+34,55,6.8,80,Tebu
+35,53,7.0,90,Tebu
+33,57,6.7,100,Tebu
+36,50,7.1,70,Tebu
+
+22,78,6.0,250,Kubis
+21,80,5.9,270,Kubis
+23,75,6.1,240,Kubis
+20,82,5.8,290,Kubis
+
+31,70,6.3,140,Tomat
+30,72,6.2,150,Tomat
+32,68,6.4,130,Tomat
+29,75,6.1,160,Tomat
+
+26,90,5.2,500,Kakao
+27,88,5.3,480,Kakao
+25,92,5.1,520,Kakao
+28,85,5.4,460,Kakao
+
+29,78,6.4,210,Pisang
+30,76,6.5,220,Pisang
+28,80,6.3,230,Pisang
+31,74,6.6,200,Pisang
+
+32,65,6.8,130,Semangka
+33,63,6.9,120,Semangka
+31,67,6.7,140,Semangka
+34,60,7.0,110,Semangka
+
+23,85,5.6,340,Stroberi
+22,88,5.5,360,Stroberi
+24,82,5.7,320,Stroberi
+21,90,5.4,380,Stroberi
+
+28,74,6.3,190,Singkong
+29,72,6.4,180,Singkong
+27,76,6.2,200,Singkong
+30,70,6.5,170,Singkong
+
+27,78,6.1,240,Bawang Merah
+28,75,6.2,220,Bawang Merah
+26,80,6.0,260,Bawang Merah
+29,73,6.3,210,Bawang Merah
+
+24,70,6.5,180,Bawang Putih
+23,72,6.4,170,Bawang Putih
+25,68,6.6,160,Bawang Putih
+22,74,6.3,190,Bawang Putih
+
+31,65,6.8,150,Kacang Tanah
+32,63,6.9,140,Kacang Tanah
+30,67,6.7,160,Kacang Tanah
+33,60,7.0,130,Kacang Tanah
+
+26,82,5.8,300,Wortel
+25,84,5.7,320,Wortel
+27,80,5.9,280,Wortel
+24,86,5.6,340,Wortel
+
+22,88,5.5,360,Selada
+23,85,5.6,340,Selada
+21,90,5.4,380,Selada
+24,82,5.7,320,Selada
+
+30,72,6.4,200,Mentimun
+31,70,6.5,190,Mentimun
+29,74,6.3,210,Mentimun
+32,68,6.6,180,Mentimun
+
+33,58,7.1,100,Melon
+34,56,7.2,90,Melon
+32,60,7.0,110,Melon
+35,54,7.3,80,Melon
+
+28,76,6.2,220,Terong
+29,74,6.3,210,Terong
+27,78,6.1,230,Terong
+30,72,6.4,200,Terong
+
+25,80,5.9,310,Brokoli
+24,82,5.8,330,Brokoli
+26,78,6.0,290,Brokoli
+23,84,5.7,350,Brokoli
+
+29,69,6.5,170,Buncis
+30,67,6.6,160,Buncis
+28,71,6.4,180,Buncis
+31,65,6.7,150,Buncis
+
+27,83,5.8,340,Bayam
+26,85,5.7,360,Bayam
+28,81,5.9,320,Bayam
+25,87,5.6,380,Bayam
+
+31,64,6.7,140,Labu
+32,62,6.8,130,Labu
+30,66,6.6,150,Labu
+33,60,6.9,120,Labu
+
+28,79,6.0,250,Sawi
+27,81,5.9,270,Sawi
+29,77,6.1,230,Sawi
+26,83,5.8,290,Sawi
+
+24,86,5.5,390,Vanili
+25,84,5.6,370,Vanili
+23,88,5.4,410,Vanili
+26,82,5.7,350,Vanili
+
+30,73,6.3,210,Pepaya
+31,71,6.4,200,Pepaya
+29,75,6.2,220,Pepaya
+32,69,6.5,190,Pepaya
+
+27,77,6.1,260,Nanas
+28,75,6.2,240,Nanas
+26,79,6.0,280,Nanas
+29,73,6.3,230,Nanas
+
+29,68,6.4,180,Kacang Hijau
+28,70,6.3,190,Kacang Hijau
+30,66,6.5,170,Kacang Hijau
+27,72,6.2,200,Kacang Hijau
+
+28,81,5.9,320,Kangkung
+27,83,5.8,340,Kangkung
+29,79,6.0,300,Kangkung
+26,85,5.7,360,Kangkung
+
+32,62,6.9,110,Tembakau
+33,60,7.0,100,Tembakau
+31,64,6.8,120,Tembakau
+34,58,7.1,90,Tembakau
+
+26,84,5.7,370,Cengkeh
+25,86,5.6,390,Cengkeh
+27,82,5.8,350,Cengkeh
+24,88,5.5,410,Cengkeh
+
+temperature,humidity,ph,rainfall,crop
+25,87,5.4,420,Pala
+24,89,5.3,440,Pala
+26,85,5.5,400,Pala
+23,91,5.2,460,Pala
+
+31,66,6.6,160,Kapas
+32,64,6.7,150,Kapas
+30,68,6.5,170,Kapas
+33,62,6.8,140,Kapas
+
+27,79,6.0,280,Kunyit
+28,77,6.1,260,Kunyit
+26,81,5.9,300,Kunyit
+29,75,6.2,240,Kunyit
+
+28,78,6.1,270,Jahe
+27,80,6.0,290,Jahe
+29,76,6.2,250,Jahe
+26,82,5.9,310,Jahe
+
+29,76,6.2,260,Lengkuas
+30,74,6.3,240,Lengkuas
+28,78,6.1,280,Lengkuas
+31,72,6.4,220,Lengkuas
+
+30,74,6.3,250,Serai
+31,72,6.4,230,Serai
+29,76,6.2,270,Serai
+32,70,6.5,210,Serai
+
+24,89,5.3,430,Kayu Manis
+23,91,5.2,450,Kayu Manis
+25,87,5.4,410,Kayu Manis
+22,93,5.1,470,Kayu Manis
+
+25,86,5.5,410,Kapulaga
+24,88,5.4,430,Kapulaga
+26,84,5.6,390,Kapulaga
+23,90,5.3,450,Kapulaga
+
+32,61,7.0,120,Jambu Biji
+33,59,7.1,110,Jambu Biji
+31,63,6.9,130,Jambu Biji
+34,57,7.2,100,Jambu Biji
+
+31,63,6.8,130,Jeruk
+30,65,6.7,140,Jeruk
+32,61,6.9,120,Jeruk
+29,67,6.6,150,Jeruk
+
+30,65,6.7,140,Mangga
+31,63,6.8,130,Mangga
+29,67,6.6,150,Mangga
+32,61,6.9,120,Mangga
+
+29,67,6.5,160,Rambutan
+30,65,6.6,150,Rambutan
+28,69,6.4,170,Rambutan
+31,63,6.7,140,Rambutan
+
+28,69,6.4,180,Durian
+27,71,6.3,200,Durian
+29,67,6.5,160,Durian
+26,73,6.2,220,Durian
+
+27,71,6.3,200,Manggis
+28,69,6.4,180,Manggis
+26,73,6.2,220,Manggis
+29,67,6.5,160,Manggis
+
+26,73,6.2,220,Salak
+27,71,6.3,200,Salak
+25,75,6.1,240,Salak
+28,69,6.4,180,Salak
+
+25,75,6.1,240,Sirsak
+24,77,6.0,260,Sirsak
+26,73,6.2,220,Sirsak
+23,79,5.9,280,Sirsak
+
+24,77,6.0,260,Sukun
+23,79,5.9,280,Sukun
+25,75,6.1,240,Sukun
+22,81,5.8,300,Sukun
+
+23,79,5.9,280,Bit
+22,81,5.8,300,Bit
+24,77,6.0,260,Bit
+21,83,5.7,320,Bit
+
+21,83,5.7,320,Lobak
+20,85,5.6,340,Lobak
+22,81,5.8,300,Lobak
+19,87,5.5,360,Lobak
+
+20,85,5.6,340,Asparagus
+19,87,5.5,360,Asparagus
+21,83,5.7,320,Asparagus
+18,89,5.4,380,Asparagus
+
+19,87,5.5,360,Seledri
+18,89,5.4,380,Seledri
+20,85,5.6,340,Seledri
+17,91,5.3,400,Seledri
+
+18,89,5.4,380,Daun Bawang
+17,91,5.3,400,Daun Bawang
+19,87,5.5,360,Daun Bawang
+16,93,5.2,420,Daun Bawang
+
+32,64,6.8,150,Kacang Panjang
+33,62,6.9,140,Kacang Panjang
+31,66,6.7,160,Kacang Panjang
+34,60,7.0,130,Kacang Panjang
+
+31,66,6.7,160,Okra
+32,64,6.8,150,Okra
+30,68,6.6,170,Okra
+33,62,6.9,140,Okra
+
+30,68,6.6,170,Zucchini
+29,70,6.5,180,Zucchini
+31,66,6.7,160,Zucchini
+28,72,6.4,190,Zucchini
