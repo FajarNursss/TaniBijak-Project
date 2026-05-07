@@ -707,7 +707,7 @@ const Profil = () => {
   const tabs = [
     { key: 'profil', label: 'Data Diri', Icon: User },
     { key: 'keamanan', label: 'Keamanan', Icon: Lock },
-    { key: 'statistik', label: 'Statistik', Icon: BarChart3 },
+    // { key: 'statistik', label: 'Statistik', Icon: BarChart3 },
   ]
 
   const profileFields = [
@@ -864,15 +864,15 @@ const Profil = () => {
               <button onClick={handlePassword} className="btn-primary flex items-center gap-2"><Key size={16} /> Perbarui Password</button>
             </div>
           </div>
-          <div className="card border-red-100">
+          {/* <div className="card border-red-100">
             <h3 className="font-bold text-red-700 mb-3 flex items-center gap-2"><AlertTriangle size={18} strokeWidth={1.8} /> Zona Berbahaya</h3>
             <p className="text-sm text-gray-500 mb-4">Tindakan ini tidak dapat dibatalkan.</p>
             <button onClick={() => setShowLogout(true)} className="btn-danger text-sm flex items-center gap-2"><LogOut size={16} /> Keluar dari Akun</button>
-          </div>
+          </div> */}
         </div>
       )}
 
-      {activeTab === 'statistik' && (
+      {/* {activeTab === 'statistik' && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {stats.map(({ label, val, Icon, color }, i) => (
             <div key={i} className={`${color.split(' ')[0]} rounded-2xl p-4 text-center`}>
@@ -882,12 +882,12 @@ const Profil = () => {
             </div>
           ))}
         </div>
-      )}
+      )} */}
 
-      <Modal isOpen={showLogout} onClose={() => setShowLogout(false)} title="Konfirmasi Keluar"
+      {/* <Modal isOpen={showLogout} onClose={() => setShowLogout(false)} title="Konfirmasi Keluar"
         footer={<><button onClick={() => setShowLogout(false)} className="btn-outline">Batal</button><button onClick={handleLogout} className="btn-danger flex items-center gap-2"><LogOut size={16} /> Ya, Keluar</button></>}>
         <p className="text-gray-600">Apakah Anda yakin ingin keluar dari TaniBijak?</p>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }

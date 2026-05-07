@@ -74,8 +74,8 @@ const Cuaca = () => {
         <StatCard icon={Gauge}       label="Tekanan Udara"  value={`${now.pressure || 0} hPa`} color="accent" />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div className="card">
+      {/* <div className="grid grid-cols-2 gap-4"> */}
+        {/* <div className="card">
           <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Eye size={18} strokeWidth={1.8} className="text-blue-500" /> Detail Cuaca
           </h3>
@@ -93,9 +93,9 @@ const Cuaca = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="card">
+        {/* <div className="card">
           <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
             <CloudSun size={18} strokeWidth={1.8} className="text-sky-500" /> Kondisi Lahan
           </h3>
@@ -111,8 +111,8 @@ const Cuaca = () => {
               </div>
             ))}
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       <div className="card">
         <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -148,7 +148,7 @@ const Cuaca = () => {
         )}
       </div>
 
-      <div className="card">
+      {/* <div className="card">
         <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
           <Droplets size={18} strokeWidth={1.8} className="text-sky-500" /> Rekomendasi Berdasarkan Cuaca
         </h3>
@@ -164,7 +164,7 @@ const Cuaca = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

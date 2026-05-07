@@ -40,7 +40,7 @@ const AdminDashboard = () => {
               <BarChart3 size={14} strokeWidth={1.8} /> Admin Panel
             </p>
             <h2 className="text-2xl font-bold mt-1">Dashboard TaniBijak</h2>
-            <p className="text-gray-300 text-sm mt-2">Pantau data dari tabel MySQL</p>
+            <p className="text-gray-300 text-sm mt-2">Pemantauan Data Pertanian</p>
           </div>
           <div className="text-right">
             <p className="text-gray-400 text-xs">Terakhir update</p>

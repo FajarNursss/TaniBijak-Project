@@ -75,7 +75,7 @@ const ManajemenLahan = () => {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><Map size={20} strokeWidth={1.8} className="text-gray-500" /> Manajemen Lahan</h2>
-          <p className="text-sm text-gray-500">Data diambil dari backend Laravel/MySQL</p>
+          {/* <p className="text-sm text-gray-500">Data diambil dari backend Laravel/MySQL</p> */}
         </div>
       </div>
 

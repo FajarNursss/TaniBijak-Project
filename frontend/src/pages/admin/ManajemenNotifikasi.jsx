@@ -24,7 +24,7 @@ const ManajemenNotifikasi = () => {
   ]
 
   const summaryStats = [
-    { label:'Total',        val:notifications.length,                          Icon:BellRing,     color:'bg-gray-100 text-gray-600' },
+    { label:'Total',        val:notifications.length,                          Icon:BellRing,     color:'bg-purple-50 text-gray-600' },
     { label:'Belum Dibaca', val:notifications.filter(n=>!n.read).length,       Icon:Inbox,        color:'bg-blue-50 text-blue-600' },
     { label:'Peringatan',   val:notifications.filter(n=>n.type==='warning').length, Icon:AlertTriangle, color:'bg-yellow-50 text-yellow-600' },
     { label:'Bahaya',       val:notifications.filter(n=>n.type==='danger').length,  Icon:AlertCircle,   color:'bg-red-50 text-red-600' },

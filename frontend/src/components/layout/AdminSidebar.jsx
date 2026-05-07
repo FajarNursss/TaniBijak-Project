@@ -13,7 +13,7 @@ const adminMenu = [
   { path: '/admin/kearifan',   icon: BookOpen,   label: 'Kearifan Lokal' },
   { path: '/admin/notifikasi', icon: Bell,       label: 'Notifikasi' },
   { path: '/admin/monitoring', icon: Activity,   label: 'Monitoring' },
-  { path: '/admin/pengaturan', icon: Settings,   label: 'Pengaturan' },
+  // { path: '/admin/pengaturan', icon: Settings,   label: 'Pengaturan' },
 ]
 
 const AdminSidebar = ({ isOpen, onClose }) => {

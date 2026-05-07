@@ -60,7 +60,7 @@ const ManajemenKearifan = () => {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><BookOpen size={20} strokeWidth={1.8} className="text-gray-500" /> Manajemen Kearifan Lokal</h2>
-          <p className="text-sm text-gray-500">Data dari tabel `local_wisdoms`</p>
+          {/* <p className="text-sm text-gray-500">Data dari tabel `local_wisdoms`</p> */}
         </div>
         <button onClick={() => setShowAdd(true)} className="btn-primary flex items-center gap-2"><Plus size={16} /> Tambah Kearifan</button>
       </div>
@@ -69,7 +69,7 @@ const ManajemenKearifan = () => {
         {[
           { label:'Total Entri', val:data.length,                             Icon:BookOpen, color:'bg-amber-50 text-amber-700' },
           { label:'Aktif',       val:data.filter(d=>d.status==='aktif').length, Icon:Star,  color:'bg-green-50 text-green-700' },
-          { label:'Draft',       val:data.filter(d=>d.status==='draft').length, Icon:Pencil, color:'bg-gray-100 text-gray-600' },
+          { label:'Draft',       val:data.filter(d=>d.status==='draft').length, Icon:Pencil, color:'bg-blue-50 text-gray-600' },
         ].map(({ label, val, Icon, color }, i) => (
           <div key={i} className={`${color.split(' ')[0]} rounded-2xl p-4 flex items-center gap-3`}>
             <Icon size={24} strokeWidth={1.8} className={color.split(' ')[1]} />

@@ -43,7 +43,7 @@ const Monitoring = () => {
     <div className="space-y-6 fade-in">
       <div>
         <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><Activity size={20} strokeWidth={1.8} className="text-gray-500" /> Monitoring Aktivitas</h2>
-        <p className="text-sm text-gray-500">Data aktivitas dari tabel `activity_logs`</p>
+        {/* <p className="text-sm text-gray-500">Data aktivitas dari tabel `activity_logs`</p> */}
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

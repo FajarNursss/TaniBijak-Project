@@ -36,6 +36,8 @@ const UserDashboard = () => {
   const totalLahan = dashboard?.total_luas ? `${dashboard.total_luas} Ha` : '0 Ha'
   const totalHistory = dashboard?.riwayat_tanam || 0
 
+  const isLocationIncomplete = !user?.location || !user.location.includes(', ')
+
   return (
     <div className="space-y-6 fade-in">
       {/* Welcome Banner */}
@@ -55,6 +57,20 @@ const UserDashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* Incomplete Profile Warning */}
+      {isLocationIncomplete && (
+        <div className="bg-amber-50 border border-amber-200 text-amber-800 px-5 py-4 rounded-2xl text-sm flex items-start gap-3 shadow-sm">
+          <AlertTriangle size={20} className="text-amber-500 shrink-0 mt-0.5" /> 
+          <div>
+            <strong className="block mb-1 text-base">Lengkapi Profil Lokasi Anda</strong>
+            <p className="text-amber-700/80 mb-2">Data Provinsi dan Kota/Kabupaten belum lengkap. Sistem membutuhkan data ini untuk memberikan prediksi cuaca dan rekomendasi yang lebih akurat.</p>
+            <Link to="/profil" className="inline-block bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold px-4 py-1.5 rounded-lg transition-colors">
+              Lengkapi Sekarang
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

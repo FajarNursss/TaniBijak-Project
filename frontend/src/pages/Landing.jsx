@@ -60,7 +60,7 @@ const Landing = () => {
       <nav className="w-full px-6 md:px-12 py-4 md:py-6 flex justify-between items-center relative z-50 bg-white/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none">
         <div className="flex items-center gap-3">
           <img src={logoImg} alt="TaniBijak" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
-          <span className="text-xl md:text-2xl font-bold text-primary-800 uppercase tracking-wide">TaniBijak</span>
+          <span className="text-xl md:text-2xl font-bold text-dark-800 uppercase tracking-wide">TaniBijak</span>
         </div>
 
         {/* Desktop Navigation Links */}
@@ -218,14 +218,14 @@ const Landing = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
               </div>
               <h3 className="font-bold text-xl text-gray-900 mb-2">Telepon</h3>
-              <p className="text-gray-600">+62 812 3456 7890</p>
+              <p className="text-gray-600">+62 8157 0014 71</p>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center">
               <div className="bg-primary-100 p-4 rounded-full text-primary-700 mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
               </div>
               <h3 className="font-bold text-xl text-gray-900 mb-2">Lokasi</h3>
-              <p className="text-gray-600">Jl. Pertanian Modern No. 1<br />Jakarta Selatan</p>
+              <p className="text-gray-600">Universitas Nurtanio<br />Jl. Pajajaran No.219, Bandung, Jawa Barat</p>
             </div>
           </div>
         </div>
@@ -234,7 +234,7 @@ const Landing = () => {
       {/* Footer */}
       <footer className="w-full bg-white border-t border-gray-100 py-8 px-6 md:px-12 lg:px-24 relative z-20 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-gray-500 text-sm font-medium">
-          &copy; {new Date().getFullYear()} TaniBijak. Seluruh hak cipta dilindungi.
+          &copy; {new Date().getFullYear()} TaniBijak. Siap Ga Siap Dikumpulkan.
         </p>
         <div className="flex items-center gap-3">
           <span className="text-gray-500 text-sm font-medium">Data Cuaca Didukung Oleh:</span>
